@@ -1,0 +1,1389 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Yash Singh - Mechanical Engineering Portfolio</title>
+  <style>
+    @page {
+      size: 210mm 297mm;
+      margin: 0;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      -webkit-print-color-adjust: exact !important;
+      print-color-adjust: exact !important;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+      background-color: #080D1A;
+      color: #E2E8F0;
+      line-height: 1.5;
+      font-size: 13px;
+    }
+
+    /* Page container: exact A4 dimensions */
+    .pdf-page {
+      width: 210mm;
+      height: 297mm;
+      position: relative;
+      page-break-after: always;
+      overflow: hidden;
+      background: #0B132B;
+      color: #E2E8F0;
+      padding: 16mm 18mm;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    /* Subtle blueprint grid overlay */
+    .pdf-page::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background-image: 
+        linear-gradient(rgba(56, 189, 248, 0.035) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(56, 189, 248, 0.035) 1px, transparent 1px),
+        linear-gradient(rgba(56, 189, 248, 0.015) 5px, transparent 5px),
+        linear-gradient(90deg, rgba(56, 189, 248, 0.015) 5px, transparent 5px);
+      background-size: 20mm 20mm, 20mm 20mm, 4mm 4mm, 4mm 4mm;
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    .page-content {
+      position: relative;
+      z-index: 2;
+      flex: 1;
+    }
+
+    /* Header for inside pages */
+    .page-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-bottom: 3.5mm;
+      margin-bottom: 5mm;
+      border-bottom: 1px solid rgba(148, 163, 184, 0.25);
+      position: relative;
+      z-index: 2;
+    }
+
+    .page-header .brand {
+      font-family: 'Space Grotesk', sans-serif;
+      font-weight: 700;
+      font-size: 13px;
+      color: #F8FAFC;
+      letter-spacing: 0.5px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .page-header .brand span {
+      color: #38BDF8;
+    }
+
+    .page-header .doc-id {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 9px;
+      color: #94A3B8;
+      letter-spacing: 1px;
+    }
+
+    /* Footer for inside pages */
+    .page-footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-top: 3.5mm;
+      border-top: 1px solid rgba(148, 163, 184, 0.2);
+      font-size: 9px;
+      color: #94A3B8;
+      font-family: 'JetBrains Mono', monospace;
+      position: relative;
+      z-index: 2;
+    }
+
+    .page-footer .tagline {
+      color: #CBD5E1;
+      font-style: italic;
+    }
+
+    /* Typography */
+    h1, h2, h3, h4 {
+      font-family: 'Space Grotesk', sans-serif;
+      color: #FFFFFF;
+      font-weight: 700;
+      letter-spacing: -0.3px;
+    }
+
+    .section-title-wrap {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 4mm;
+      padding-bottom: 2mm;
+      border-bottom: 1.5px solid rgba(56, 189, 248, 0.3);
+    }
+
+    .section-title {
+      font-size: 15px;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      color: #F8FAFC;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .section-title::before {
+      content: "";
+      display: inline-block;
+      width: 4px;
+      height: 14px;
+      background: #38BDF8;
+      border-radius: 2px;
+    }
+
+    .section-num {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 10px;
+      color: #38BDF8;
+      background: rgba(56, 189, 248, 0.1);
+      padding: 1px 6px;
+      border-radius: 3px;
+      border: 1px solid rgba(56, 189, 248, 0.25);
+    }
+
+    /* ===================================================
+       PAGE 1: COVER PAGE
+       =================================================== */
+    .cover-page {
+      background: radial-gradient(circle at 85% 15%, rgba(56, 189, 248, 0.12) 0%, transparent 60%),
+                  radial-gradient(circle at 15% 85%, rgba(30, 58, 138, 0.25) 0%, transparent 55%),
+                  #070C18;
+      padding: 16mm 18mm;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .cover-top-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      border-bottom: 1px solid rgba(148, 163, 184, 0.2);
+      padding-bottom: 4mm;
+    }
+
+    .cover-top-left {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .cover-logo-mark {
+      width: 40px;
+      height: 40px;
+      border: 2px solid #38BDF8;
+      background: rgba(56, 189, 248, 0.08);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Space Grotesk', sans-serif;
+      font-weight: 700;
+      font-size: 16px;
+      color: #FFFFFF;
+      border-radius: 6px;
+      position: relative;
+    }
+
+    .cover-logo-mark::after {
+      content: "";
+      position: absolute;
+      top: -3px; right: -3px;
+      width: 6px; height: 6px;
+      background: #38BDF8;
+    }
+
+    .cover-inst {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 10px;
+      color: #CBD5E1;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      line-height: 1.4;
+    }
+
+    .cover-inst strong {
+      color: #FFFFFF;
+      font-size: 11px;
+      display: block;
+      letter-spacing: 0.5px;
+    }
+
+    .cover-status-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(56, 189, 248, 0.12);
+      border: 1px solid rgba(56, 189, 248, 0.35);
+      color: #38BDF8;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 9px;
+      font-weight: 600;
+      padding: 3px 8px;
+      border-radius: 20px;
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+    }
+
+    .cover-status-dot {
+      width: 6px;
+      height: 6px;
+      background: #38BDF8;
+      border-radius: 50%;
+      box-shadow: 0 0 6px #38BDF8;
+    }
+
+    .cover-hero-center {
+      margin: 10mm 0;
+      position: relative;
+    }
+
+    .cover-discipline {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 12px;
+      color: #38BDF8;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      margin-bottom: 2mm;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .cover-name {
+      font-size: 42px;
+      font-weight: 800;
+      line-height: 1.05;
+      color: #FFFFFF;
+      letter-spacing: -1px;
+      margin-bottom: 3mm;
+    }
+
+    .cover-subtitle {
+      font-size: 17px;
+      color: #CBD5E1;
+      font-weight: 500;
+      margin-bottom: 5mm;
+      letter-spacing: -0.2px;
+    }
+
+    .cover-meta-pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 8mm;
+    }
+
+    .meta-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(28, 37, 65, 0.7);
+      border: 1px solid rgba(148, 163, 184, 0.25);
+      padding: 5px 12px;
+      border-radius: 4px;
+      font-size: 11px;
+      color: #CBD5E1;
+    }
+
+    .meta-pill svg {
+      color: #38BDF8;
+    }
+
+    /* Mechanical CAD Wireframe Graphic in Cover */
+    .cover-graphic-container {
+      background: rgba(14, 20, 36, 0.7);
+      border: 1px solid rgba(56, 189, 248, 0.25);
+      border-radius: 8px;
+      padding: 5mm 6mm;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .cover-graphic-container::before {
+      content: "MECHANICAL DRAFTING SPECIFICATION";
+      position: absolute;
+      top: 5px; right: 10px;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 7.5px;
+      color: rgba(148, 163, 184, 0.5);
+      letter-spacing: 1px;
+    }
+
+    .cover-schematic-left {
+      flex: 1;
+      padding-right: 15px;
+    }
+
+    .cover-schematic-left h4 {
+      font-size: 12px;
+      color: #F8FAFC;
+      margin-bottom: 2px;
+      font-family: 'Space Grotesk', sans-serif;
+    }
+
+    .cover-schematic-left p {
+      font-size: 10.5px;
+      color: #94A3B8;
+      line-height: 1.4;
+    }
+
+    .cover-svg-wrapper {
+      width: 140px;
+      height: 95px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    /* Standard Engineering Title Block at Bottom of Cover */
+    .title-block {
+      border: 1.5px solid #38BDF8;
+      background: rgba(11, 19, 43, 0.95);
+      border-radius: 4px;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 9px;
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+    }
+
+    .tb-cell {
+      padding: 6px 10px;
+      border-right: 1px solid rgba(56, 189, 248, 0.3);
+      border-bottom: 1px solid rgba(56, 189, 248, 0.3);
+    }
+
+    .tb-cell:last-child {
+      border-right: none;
+    }
+
+    .tb-label {
+      color: #64748B;
+      font-size: 7.5px;
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      display: block;
+      margin-bottom: 1px;
+    }
+
+    .tb-value {
+      color: #F8FAFC;
+      font-weight: 600;
+      font-size: 9.5px;
+    }
+
+    .tb-value-highlight {
+      color: #38BDF8;
+      font-weight: 700;
+    }
+
+    /* ===================================================
+       PAGE 2: ABOUT, EDUCATION & INTERESTS
+       =================================================== */
+    .about-card {
+      background: rgba(17, 26, 51, 0.6);
+      border: 1px solid rgba(148, 163, 184, 0.2);
+      border-left: 3px solid #38BDF8;
+      padding: 4mm 5mm;
+      border-radius: 4px;
+      margin-bottom: 5mm;
+    }
+
+    .about-card p {
+      color: #CBD5E1;
+      font-size: 11px;
+      line-height: 1.55;
+      margin-bottom: 2mm;
+    }
+
+    .about-card p:last-child {
+      margin-bottom: 0;
+    }
+
+    /* Education Block */
+    .edu-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3.5mm;
+      margin-bottom: 5mm;
+    }
+
+    .edu-box {
+      background: rgba(15, 23, 42, 0.7);
+      border: 1px solid rgba(148, 163, 184, 0.2);
+      border-radius: 4px;
+      padding: 3.5mm 4mm;
+    }
+
+    .edu-box-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 2mm;
+    }
+
+    .edu-tag {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 8px;
+      color: #38BDF8;
+      background: rgba(56, 189, 248, 0.1);
+      padding: 2px 6px;
+      border-radius: 3px;
+      border: 1px solid rgba(56, 189, 248, 0.2);
+    }
+
+    .edu-title {
+      font-size: 12px;
+      font-weight: 700;
+      color: #FFFFFF;
+      margin-bottom: 1mm;
+    }
+
+    .edu-inst {
+      font-size: 11px;
+      color: #CBD5E1;
+      font-weight: 500;
+      margin-bottom: 2mm;
+    }
+
+    .edu-details-list {
+      list-style: none;
+      font-size: 10px;
+      color: #94A3B8;
+      line-height: 1.45;
+    }
+
+    .edu-details-list li {
+      position: relative;
+      padding-left: 10px;
+      margin-bottom: 2px;
+    }
+
+    .edu-details-list li::before {
+      content: "•";
+      position: absolute;
+      left: 0;
+      color: #38BDF8;
+    }
+
+    /* Engineering Interests Grid */
+    .interests-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 3mm;
+    }
+
+    .interest-item {
+      background: rgba(15, 23, 42, 0.6);
+      border: 1px solid rgba(148, 163, 184, 0.18);
+      border-radius: 4px;
+      padding: 3mm 3.5mm;
+      display: flex;
+      align-items: flex-start;
+      gap: 3mm;
+    }
+
+    .interest-icon-box {
+      width: 26px;
+      height: 26px;
+      border-radius: 4px;
+      background: rgba(56, 189, 248, 0.1);
+      border: 1px solid rgba(56, 189, 248, 0.25);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #38BDF8;
+      flex-shrink: 0;
+    }
+
+    .interest-info h4 {
+      font-size: 10.5px;
+      font-weight: 600;
+      color: #F8FAFC;
+      margin-bottom: 1px;
+    }
+
+    .interest-info p {
+      font-size: 9px;
+      color: #94A3B8;
+      line-height: 1.35;
+    }
+
+    /* ===================================================
+       PAGE 3: SKILLS MATRIX & PROJECTS
+       =================================================== */
+    .skills-matrix {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 3.5mm;
+      margin-bottom: 5mm;
+    }
+
+    .skill-block {
+      background: rgba(15, 23, 42, 0.65);
+      border: 1px solid rgba(148, 163, 184, 0.2);
+      border-radius: 4px;
+      padding: 3.5mm 4mm;
+    }
+
+    .skill-block-title {
+      font-size: 11px;
+      font-weight: 700;
+      color: #FFFFFF;
+      margin-bottom: 2mm;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid rgba(148, 163, 184, 0.15);
+      padding-bottom: 1.5mm;
+    }
+
+    .skill-badge-placeholder {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 7.5px;
+      color: #F59E0B;
+      background: rgba(245, 158, 11, 0.1);
+      border: 1px solid rgba(245, 158, 11, 0.3);
+      padding: 1px 5px;
+      border-radius: 2px;
+    }
+
+    .skill-items-list {
+      list-style: none;
+      font-size: 10px;
+    }
+
+    .skill-item-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 2px 0;
+      border-bottom: 1px dashed rgba(148, 163, 184, 0.1);
+    }
+
+    .skill-item-row:last-child {
+      border-bottom: none;
+    }
+
+    .skill-name {
+      color: #CBD5E1;
+      font-weight: 500;
+    }
+
+    .skill-status {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 8px;
+      color: #94A3B8;
+      background: rgba(148, 163, 184, 0.08);
+      padding: 1px 5px;
+      border-radius: 2px;
+    }
+
+    /* Project Cards in PDF */
+    .project-card-pdf {
+      background: rgba(15, 23, 42, 0.75);
+      border: 1px solid rgba(148, 163, 184, 0.25);
+      border-radius: 4px;
+      padding: 3.5mm 4mm;
+      margin-bottom: 3.5mm;
+      position: relative;
+    }
+
+    .project-card-pdf::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 0; bottom: 0;
+      width: 3px;
+      background: #38BDF8;
+      border-radius: 4px 0 0 4px;
+    }
+
+    .project-pdf-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 2mm;
+    }
+
+    .project-pdf-title {
+      font-size: 11.5px;
+      font-weight: 700;
+      color: #F8FAFC;
+    }
+
+    .project-pdf-status {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 7.5px;
+      color: #38BDF8;
+      background: rgba(56, 189, 248, 0.12);
+      border: 1px solid rgba(56, 189, 248, 0.3);
+      padding: 1px 6px;
+      border-radius: 2px;
+      text-transform: uppercase;
+    }
+
+    .project-pdf-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      gap: 3mm;
+    }
+
+    .project-field-label {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 7.5px;
+      color: #38BDF8;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-top: 1.5mm;
+      margin-bottom: 0.5mm;
+      display: block;
+    }
+
+    .project-field-text {
+      font-size: 9.5px;
+      color: #CBD5E1;
+      line-height: 1.35;
+    }
+
+    .cad-placeholder-box {
+      border: 1px dashed rgba(56, 189, 248, 0.4);
+      background: rgba(11, 19, 43, 0.5);
+      border-radius: 4px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 3mm;
+      text-align: center;
+    }
+
+    .cad-placeholder-box svg {
+      color: #38BDF8;
+      margin-bottom: 2px;
+    }
+
+    .cad-placeholder-box span {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 7.5px;
+      color: #94A3B8;
+      line-height: 1.2;
+    }
+
+    /* ===================================================
+       PAGE 4: PROJECTS CONT, CERTS, CAREER GOALS & CONTACT
+       =================================================== */
+    .cert-section-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 3mm;
+      margin-bottom: 4mm;
+    }
+
+    .cert-box-pdf {
+      background: rgba(15, 23, 42, 0.6);
+      border: 1px solid rgba(148, 163, 184, 0.2);
+      border-radius: 4px;
+      padding: 2.5mm 3.5mm;
+    }
+
+    .cert-box-pdf h4 {
+      font-size: 10px;
+      color: #FFFFFF;
+      margin-bottom: 1px;
+    }
+
+    .cert-box-pdf p {
+      font-size: 8.5px;
+      color: #94A3B8;
+      line-height: 1.3;
+    }
+
+    .career-box-pdf {
+      background: rgba(15, 23, 42, 0.7);
+      border: 1px solid rgba(56, 189, 248, 0.3);
+      border-radius: 4px;
+      padding: 3.5mm 4.5mm;
+      margin-bottom: 4mm;
+      position: relative;
+    }
+
+    .career-box-pdf p {
+      font-size: 10px;
+      color: #CBD5E1;
+      line-height: 1.5;
+    }
+
+    /* Contact Details Grid */
+    .contact-grid-pdf {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2.5mm;
+      margin-bottom: 5mm;
+    }
+
+    .contact-item-pdf {
+      background: rgba(15, 23, 42, 0.6);
+      border: 1px solid rgba(148, 163, 184, 0.2);
+      border-radius: 4px;
+      padding: 2.5mm 3.5mm;
+      display: flex;
+      align-items: center;
+      gap: 3mm;
+    }
+
+    .contact-item-pdf .c-icon {
+      color: #38BDF8;
+    }
+
+    .contact-item-pdf .c-meta {
+      font-size: 9.5px;
+    }
+
+    .contact-item-pdf .c-label {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 7px;
+      color: #64748B;
+      text-transform: uppercase;
+      display: block;
+    }
+
+    .contact-item-pdf .c-value {
+      color: #F8FAFC;
+      font-weight: 500;
+    }
+
+    /* Elegant Closing Banner */
+    .closing-banner-pdf {
+      background: linear-gradient(135deg, rgba(30, 58, 138, 0.4) 0%, rgba(15, 23, 42, 0.9) 100%);
+      border: 1.5px solid rgba(56, 189, 248, 0.4);
+      border-radius: 6px;
+      padding: 5mm 6mm;
+      text-align: center;
+      position: relative;
+      margin-top: auto;
+    }
+
+    .closing-motto {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 17px;
+      font-weight: 700;
+      color: #FFFFFF;
+      letter-spacing: 0.5px;
+      margin-bottom: 1.5mm;
+    }
+
+    .closing-motto span {
+      color: #38BDF8;
+    }
+
+    .closing-author {
+      font-size: 12px;
+      font-weight: 600;
+      color: #CBD5E1;
+      margin-bottom: 0.5mm;
+    }
+
+    .closing-designation {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 9px;
+      color: #38BDF8;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+    }
+
+    .blueprint-watermark {
+      position: absolute;
+      bottom: 8mm; right: 8mm;
+      opacity: 0.08;
+      pointer-events: none;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ==========================================
+       PAGE 1: COVER PAGE
+       ========================================== -->
+  <div class="pdf-page cover-page">
+    <div class="cover-top-bar">
+      <div class="cover-top-left">
+        <div class="cover-logo-mark">YS</div>
+        <div class="cover-inst">
+          <strong>JECRC UNIVERSITY</strong>
+          DEPARTMENT OF MECHANICAL ENGINEERING
+        </div>
+      </div>
+      <div class="cover-status-badge">
+        <span class="cover-status-dot"></span>
+        First Year Undergraduate
+      </div>
+    </div>
+
+    <div class="cover-hero-center">
+      <div class="cover-discipline">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="12" cy="12" r="3"></circle>
+          <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path>
+        </svg>
+        Mechanical Engineering Portfolio
+      </div>
+      <h1 class="cover-name">YASH SINGH</h1>
+      <div class="cover-subtitle">Aspiring Mechanical Engineer • First-Year Student</div>
+      
+      <div class="cover-meta-pills">
+        <div class="meta-pill">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M22 10v6M2 10l10-5 10 5-10 5z"></path>
+            <path d="M6 12v5c3 3 9 3 12 0v-5"></path>
+          </svg>
+          JECRC University, Jaipur, Rajasthan
+        </div>
+        <div class="meta-pill">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+            <circle cx="12" cy="10" r="3"></circle>
+          </svg>
+          Hometown: Balotra, Rajasthan, India
+        </div>
+        <div class="meta-pill">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect>
+            <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
+          </svg>
+          Academic Dossier & Technical Profile
+        </div>
+      </div>
+
+      <!-- Technical CAD Wireframe Graphic -->
+      <div class="cover-graphic-container">
+        <div class="cover-schematic-left">
+          <h4>ENGINEERING FOUNDATION PROFILE</h4>
+          <p>Structured academic portfolio documenting foundational study in mechanical systems, computer-aided design, manufacturing principles, thermodynamics, and robotics.</p>
+        </div>
+        <div class="cover-svg-wrapper">
+          <!-- Precision CAD Gear & Coordinate Vector -->
+          <svg width="130" height="85" viewBox="0 0 130 85" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="50" cy="42" r="34" stroke="#38BDF8" stroke-width="1.2" stroke-dasharray="3 2" />
+            <circle cx="50" cy="42" r="26" stroke="#94A3B8" stroke-width="1.5" />
+            <circle cx="50" cy="42" r="10" stroke="#38BDF8" stroke-width="1.5" fill="rgba(56, 189, 248, 0.1)" />
+            <!-- Pitch circle centerlines -->
+            <line x1="10" y1="42" x2="90" y2="42" stroke="#38BDF8" stroke-width="0.8" stroke-dasharray="8 2 2 2" />
+            <line x1="50" y1="2" x2="50" y2="82" stroke="#38BDF8" stroke-width="0.8" stroke-dasharray="8 2 2 2" />
+            <!-- Gear teeth representations -->
+            <rect x="47" y="12" width="6" height="5" stroke="#38BDF8" stroke-width="1" fill="rgba(56, 189, 248, 0.2)" />
+            <rect x="47" y="67" width="6" height="5" stroke="#38BDF8" stroke-width="1" fill="rgba(56, 189, 248, 0.2)" />
+            <rect x="20" y="39" width="5" height="6" stroke="#38BDF8" stroke-width="1" fill="rgba(56, 189, 248, 0.2)" />
+            <rect x="75" y="39" width="5" height="6" stroke="#38BDF8" stroke-width="1" fill="rgba(56, 189, 248, 0.2)" />
+            <!-- Secondary interlocking gear -->
+            <circle cx="95" cy="25" r="16" stroke="#CBD5E1" stroke-width="1" stroke-dasharray="2 2" />
+            <circle cx="95" cy="25" r="6" stroke="#38BDF8" stroke-width="1" />
+            <!-- Dimension callout -->
+            <line x1="100" y1="58" x2="125" y2="58" stroke="#94A3B8" stroke-width="0.8" />
+            <line x1="125" y1="58" x2="120" y2="55" stroke="#94A3B8" stroke-width="0.8" />
+            <text x="96" y="70" fill="#38BDF8" font-size="7" font-family="'JetBrains Mono', monospace">Ø52.00 mm</text>
+          </svg>
+        </div>
+      </div>
+    </div>
+
+    <!-- ASME / ISO Standard Drawing Title Block -->
+    <div class="title-block">
+      <div class="tb-cell">
+        <span class="tb-label">Document Title</span>
+        <span class="tb-value">ENGINEERING STUDENT PORTFOLIO</span>
+      </div>
+      <div class="tb-cell">
+        <span class="tb-label">Academic Year</span>
+        <span class="tb-value-highlight">FIRST YEAR (B.TECH)</span>
+      </div>
+      <div class="tb-cell">
+        <span class="tb-label">Discipline</span>
+        <span class="tb-value">MECHANICAL ENGG.</span>
+      </div>
+      <div class="tb-cell">
+        <span class="tb-label">Student / Author</span>
+        <span class="tb-value-highlight">YASH SINGH</span>
+      </div>
+      <div class="tb-cell">
+        <span class="tb-label">Institution</span>
+        <span class="tb-value">JECRC UNIV., JAIPUR</span>
+      </div>
+      <div class="tb-cell">
+        <span class="tb-label">Document Status</span>
+        <span class="tb-value">REV 01 — ACTIVE</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==========================================
+       PAGE 2: ABOUT, EDUCATION & INTERESTS
+       ========================================== -->
+  <div class="pdf-page">
+    <div class="page-header">
+      <div class="brand">
+        <span>[ME]</span> YASH SINGH &bull; PORTFOLIO
+      </div>
+      <div class="doc-id">DOC REF: YS-ME-2026 / SEC 01-03</div>
+    </div>
+
+    <div class="page-content">
+      <!-- Section B: About Me -->
+      <div class="section-title-wrap">
+        <div class="section-title">01. Professional Profile &amp; About Me</div>
+        <div class="section-num">OVERVIEW</div>
+      </div>
+
+      <div class="about-card">
+        <p>I am a passionate and motivated first-year Mechanical Engineering undergraduate student at <strong>JECRC University, Jaipur</strong>, hailing from <strong>Balotra, Rajasthan, India</strong>. My journey into mechanical engineering is driven by an inquisitive curiosity about how physical mechanisms, power transmission systems, and industrial machines operate.</p>
+        <p>As an aspiring engineer early in my academic formation, I am committed to building rigorous core engineering fundamentals in mechanics, engineering design, manufacturing processes, and modern computer-aided engineering. I believe in combining theoretical principles with disciplined practical inquiry, problem-solving, and continuous learning to contribute meaningfully to emerging engineering challenges.</p>
+      </div>
+
+      <!-- Section C: Education -->
+      <div class="section-title-wrap">
+        <div class="section-title">02. Academic Education</div>
+        <div class="section-num">ACADEMICS</div>
+      </div>
+
+      <div class="edu-grid">
+        <div class="edu-box">
+          <div class="edu-box-header">
+            <span class="edu-tag">CURRENT ENROLLMENT</span>
+            <span style="font-family: 'JetBrains Mono', monospace; font-size: 8.5px; color: #94A3B8;">2025 – Present</span>
+          </div>
+          <div class="edu-title">Bachelor of Technology (B.Tech)</div>
+          <div class="edu-inst">JECRC University, Jaipur, Rajasthan</div>
+          <ul class="edu-details-list">
+            <li><strong>Branch:</strong> Mechanical Engineering</li>
+            <li><strong>Academic Level:</strong> First Year Undergraduate</li>
+            <li><strong>Current Focus:</strong> Core Engineering Fundamentals &amp; Laboratory Sciences</li>
+            <li><strong>Academic Integrity:</strong> Cumulative grades/CGPA to be recorded upon official completion of assessment cycles</li>
+          </ul>
+        </div>
+
+        <div class="edu-box">
+          <div class="edu-box-header">
+            <span class="edu-tag">ORIGIN &amp; FOUNDATION</span>
+            <span style="font-family: 'JetBrains Mono', monospace; font-size: 8.5px; color: #94A3B8;">Rajasthan, India</span>
+          </div>
+          <div class="edu-title">Pre-University Education</div>
+          <div class="edu-inst">Balotra, Rajasthan, India</div>
+          <ul class="edu-details-list">
+            <li><strong>Home Town:</strong> Balotra, Rajasthan</li>
+            <li><strong>Foundation:</strong> Science &amp; Mathematics Stream</li>
+            <li><strong>Core Preparation:</strong> Physics, Chemistry, and Advanced Mathematics</li>
+            <li><strong>Transition:</strong> Progressed to University Engineering Studies at Jaipur</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Section D: Engineering Interests -->
+      <div class="section-title-wrap">
+        <div class="section-title">03. Engineering Exploration &amp; Interests</div>
+        <div class="section-num">AREAS OF FOCUS</div>
+      </div>
+
+      <div class="interests-grid">
+        <div class="interest-item">
+          <div class="interest-icon-box">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path>
+              <polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline>
+              <line x1="12" y1="22.08" x2="12" y2="12"></line>
+            </svg>
+          </div>
+          <div class="interest-info">
+            <h4>Mechanical Design &amp; Drawing</h4>
+            <p>Principles of orthographic projection, geometric dimensioning and tolerancing (GD&amp;T), and machine element drafting.</p>
+          </div>
+        </div>
+
+        <div class="interest-item">
+          <div class="interest-icon-box">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+              <line x1="3" y1="9" x2="21" y2="9"></line>
+              <line x1="9" y1="21" x2="9" y2="9"></line>
+            </svg>
+          </div>
+          <div class="interest-info">
+            <h4>CAD 3D Modelling</h4>
+            <p>Parametric 3D solid modelling, assembly constraints, parts generation, and drafting digital prototypes for analysis.</p>
+          </div>
+        </div>
+
+        <div class="interest-item">
+          <div class="interest-icon-box">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M2 20h20M5 20V8l7 4V4l7 4v12"></path>
+            </svg>
+          </div>
+          <div class="interest-info">
+            <h4>Manufacturing Processes</h4>
+            <p>Forming, machining, casting, joining methods, precision workshop tools, and modern additive manufacturing.</p>
+          </div>
+        </div>
+
+        <div class="interest-item">
+          <div class="interest-icon-box">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+            </svg>
+          </div>
+          <div class="interest-info">
+            <h4>Thermodynamics &amp; Energy</h4>
+            <p>Energy transformation laws, heat transfer mechanisms, thermodynamic cycles, and thermal fluid systems.</p>
+          </div>
+        </div>
+
+        <div class="interest-item">
+          <div class="interest-icon-box">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <rect x="4" y="4" width="16" height="16" rx="2"></rect>
+              <circle cx="9" cy="9" r="2"></circle>
+              <circle cx="15" cy="9" r="2"></circle>
+              <line x1="8" y1="15" x2="16" y2="15"></line>
+            </svg>
+          </div>
+          <div class="interest-info">
+            <h4>Robotics &amp; Automation</h4>
+            <p>Mechatronics, kinematic linkages, actuators, sensor integration, and automated production controls.</p>
+          </div>
+        </div>
+
+        <div class="interest-item">
+          <div class="interest-icon-box">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+            </svg>
+          </div>
+          <div class="interest-info">
+            <h4>Electric Vehicles &amp; Sustainability</h4>
+            <p>EV powertrain architecture, battery thermal management, regenerative braking, and clean engineering.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="page-footer">
+      <div>YASH SINGH &bull; FIRST-YEAR MECHANICAL ENGINEERING</div>
+      <div class="tagline">"Learning Today. Engineering Tomorrow."</div>
+      <div>PAGE 02 OF 04</div>
+    </div>
+  </div>
+
+  <!-- ==========================================
+       PAGE 3: SKILLS MATRIX & PROJECTS 01 & 02
+       ========================================== -->
+  <div class="pdf-page">
+    <div class="page-header">
+      <div class="brand">
+        <span>[ME]</span> YASH SINGH &bull; PORTFOLIO
+      </div>
+      <div class="doc-id">DOC REF: YS-ME-2026 / SEC 04-05</div>
+    </div>
+
+    <div class="page-content">
+      <!-- Section E: Skills Matrix -->
+      <div class="section-title-wrap">
+        <div class="section-title">04. Technical &amp; Professional Skills</div>
+        <div class="section-num">DEVELOPING</div>
+      </div>
+
+      <div class="skills-matrix">
+        <div class="skill-block">
+          <div class="skill-block-title">
+            <span>Engineering Software &amp; Tools</span>
+            <span class="skill-badge-placeholder">ACADEMIC PHASE</span>
+          </div>
+          <ul class="skill-items-list">
+            <li class="skill-item-row">
+              <span class="skill-name">CAD Software (SolidWorks / AutoCAD)</span>
+              <span class="skill-status">To be updated</span>
+            </li>
+            <li class="skill-item-row">
+              <span class="skill-name">Engineering Graphics &amp; Drafting</span>
+              <span class="skill-status">In Progress (Curriculum)</span>
+            </li>
+            <li class="skill-item-row">
+              <span class="skill-name">Simulation / FEA Fundamentals</span>
+              <span class="skill-status">To be updated</span>
+            </li>
+            <li class="skill-item-row">
+              <span class="skill-name">Programming (Python / MATLAB / C)</span>
+              <span class="skill-status">To be updated</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="skill-block">
+          <div class="skill-block-title">
+            <span>Engineering Practice &amp; Professional</span>
+            <span class="skill-badge-placeholder">FOUNDATION</span>
+          </div>
+          <ul class="skill-items-list">
+            <li class="skill-item-row">
+              <span class="skill-name">Workshop Practice &amp; Machining</span>
+              <span class="skill-status">In Progress (Lab)</span>
+            </li>
+            <li class="skill-item-row">
+              <span class="skill-name">Technical Documentation &amp; Reporting</span>
+              <span class="skill-status">To be updated</span>
+            </li>
+            <li class="skill-item-row">
+              <span class="skill-name">Team Collaboration &amp; Communication</span>
+              <span class="skill-status">To be updated</span>
+            </li>
+            <li class="skill-item-row">
+              <span class="skill-name">Analytical &amp; Physical Problem Solving</span>
+              <span class="skill-status">Active Exploration</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Section F: Project Showcase -->
+      <div class="section-title-wrap">
+        <div class="section-title">05. Engineering Project Showcase</div>
+        <div class="section-num">ACADEMIC WORK</div>
+      </div>
+
+      <!-- Project 01 -->
+      <div class="project-card-pdf">
+        <div class="project-pdf-top">
+          <div class="project-pdf-title">PROJECT 01: [Title to be added — e.g., Planar Mechanism or CAD Assembly]</div>
+          <div class="project-pdf-status">Card 01 &bull; Editable Placeholder</div>
+        </div>
+        <div class="project-pdf-grid">
+          <div>
+            <span class="project-field-label">Problem Statement</span>
+            <p class="project-field-text">[To be updated by student: Define the engineering problem or design challenge addressed by this project.]</p>
+            
+            <span class="project-field-label">Design &amp; Engineering Approach</span>
+            <p class="project-field-text">[To be updated: Detail the methodology, mathematical modeling, CAD drawing, or physical prototype created.]</p>
+
+            <span class="project-field-label">Tools &amp; Materials Used</span>
+            <p class="project-field-text">[To be updated: e.g., AutoCAD, SolidWorks, 3D Printing, Manual Lathe/Milling, Sheet Metal.]</p>
+
+            <span class="project-field-label">Results &amp; Key Learnings</span>
+            <p class="project-field-text">[To be updated: Summarize quantitative results, functional verification, and lessons learned.]</p>
+          </div>
+          <div class="cad-placeholder-box">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+              <circle cx="8.5" cy="8.5" r="1.5"></circle>
+              <polyline points="21 15 16 10 5 21"></polyline>
+            </svg>
+            <span>CAD SCHEMATIC / PHOTO</span>
+            <span style="font-size: 6.5px; color: #64748B; margin-top: 2px;">Image to be inserted</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project 02 -->
+      <div class="project-card-pdf">
+        <div class="project-pdf-top">
+          <div class="project-pdf-title">PROJECT 02: [Title to be added — e.g., Thermodynamic Cycle or Gear Train Study]</div>
+          <div class="project-pdf-status">Card 02 &bull; Editable Placeholder</div>
+        </div>
+        <div class="project-pdf-grid">
+          <div>
+            <span class="project-field-label">Problem Statement</span>
+            <p class="project-field-text">[To be updated by student: Describe the target objective, mechanical system investigated, or analytical goal.]</p>
+            
+            <span class="project-field-label">Design &amp; Engineering Approach</span>
+            <p class="project-field-text">[To be updated: Analytical calculations, kinematic diagrams, simulation results, or lab experiments.]</p>
+
+            <span class="project-field-label">Tools &amp; Materials Used</span>
+            <p class="project-field-text">[To be updated: e.g., MATLAB, Excel, Workshop fabrication instruments, sensors.]</p>
+
+            <span class="project-field-label">Results &amp; Key Learnings</span>
+            <p class="project-field-text">[To be updated: Efficiency findings, kinematic verification, and engineering insights gained.]</p>
+          </div>
+          <div class="cad-placeholder-box">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <circle cx="12" cy="12" r="10"></circle>
+              <line x1="12" y1="8" x2="12" y2="12"></line>
+              <line x1="12" y1="16" x2="12.01" y2="16"></line>
+            </svg>
+            <span>SCHEMATIC / DIAGRAM</span>
+            <span style="font-size: 6.5px; color: #64748B; margin-top: 2px;">Visual to be inserted</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="page-footer">
+      <div>YASH SINGH &bull; FIRST-YEAR MECHANICAL ENGINEERING</div>
+      <div class="tagline">"Learning Today. Engineering Tomorrow."</div>
+      <div>PAGE 03 OF 04</div>
+    </div>
+  </div>
+
+  <!-- ==========================================
+       PAGE 4: PROJECTS CONT, CERTS, CAREER GOALS & CONTACT
+       ========================================== -->
+  <div class="pdf-page">
+    <div class="page-header">
+      <div class="brand">
+        <span>[ME]</span> YASH SINGH &bull; PORTFOLIO
+      </div>
+      <div class="doc-id">DOC REF: YS-ME-2026 / SEC 06-11</div>
+    </div>
+
+    <div class="page-content">
+      <!-- Project 03 -->
+      <div class="project-card-pdf" style="margin-bottom: 4mm;">
+        <div class="project-pdf-top">
+          <div class="project-pdf-title">PROJECT 03: [Title to be added — e.g., Automated Mechanism or Sustainable EV Design]</div>
+          <div class="project-pdf-status">Card 03 &bull; Editable Placeholder</div>
+        </div>
+        <div class="project-pdf-grid">
+          <div>
+            <span class="project-field-label">Problem Statement</span>
+            <p class="project-field-text">[To be updated: Define future project objective, engineering constraint, or sustainability target.]</p>
+            
+            <span class="project-field-label">Design &amp; Engineering Approach</span>
+            <p class="project-field-text">[To be updated: Conceptual CAD design, structural analysis, thermal dissipation or component selection.]</p>
+
+            <span class="project-field-label">Tools &amp; Materials Used / Results</span>
+            <p class="project-field-text">[To be updated: Tools, simulation environments, performance benchmark, and key takeaways.]</p>
+          </div>
+          <div class="cad-placeholder-box">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
+              <polyline points="2 17 12 22 22 17"></polyline>
+              <polyline points="2 12 12 17 22 12"></polyline>
+            </svg>
+            <span>PROTOTYPE / 3D MODEL</span>
+            <span style="font-size: 6.5px; color: #64748B; margin-top: 2px;">Visual to be inserted</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Section G & I: Certifications & Personal Interests -->
+      <div class="cert-section-grid">
+        <div class="cert-box-pdf">
+          <h4 style="color: #38BDF8; font-size: 10px; margin-bottom: 1.5mm;">CERTIFICATIONS &amp; WORKSHOPS</h4>
+          <p><strong>Workshops:</strong> To be updated (Future technical seminars &amp; CAD bootcamps)</p>
+          <p><strong>Online Courses:</strong> To be updated (NPTEL / Coursera / edX)</p>
+          <p><strong>Competitions:</strong> To be updated (Collegiate design &amp; robotics events)</p>
+        </div>
+
+        <div class="cert-box-pdf">
+          <h4 style="color: #38BDF8; font-size: 10px; margin-bottom: 1.5mm;">PERSONAL INTERESTS &amp; HOBBIES</h4>
+          <p><strong>Technical Exploration:</strong> To be updated (e.g., Mechanism dismantling, Scale modeling)</p>
+          <p><strong>Extracurricular:</strong> To be updated (e.g., Technical clubs, Sports, Reading)</p>
+          <p><strong>Creative Pursuits:</strong> To be updated by student</p>
+        </div>
+      </div>
+
+      <!-- Section H: Career Goals -->
+      <div class="section-title-wrap">
+        <div class="section-title">06. Career Goals &amp; Engineering Vision</div>
+        <div class="section-num">VISION</div>
+      </div>
+
+      <div class="career-box-pdf">
+        <p>My primary ambition as a mechanical engineering undergraduate is to build an unshakeable mastery of fundamental mechanical sciences—including solid mechanics, fluid dynamics, thermodynamics, and material behavior. Over the course of my degree at JECRC University, I aim to gain rigorous practical laboratory experience, master industrial-standard CAD and FEA analysis tools, participate actively in hands-on student design competitions, and undertake impactful internships. My long-term goal is to evolve into a versatile, innovative mechanical engineer capable of designing reliable, energy-efficient, and sustainable systems that tackle real-world technological challenges.</p>
+      </div>
+
+      <!-- Section J: Professional Contact -->
+      <div class="section-title-wrap">
+        <div class="section-title">07. Professional Contact Information</div>
+        <div class="section-num">CONNECT</div>
+      </div>
+
+      <div class="contact-grid-pdf">
+        <div class="contact-item-pdf">
+          <div class="c-icon">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+              <polyline points="22,6 12,13 2,6"></polyline>
+            </svg>
+          </div>
+          <div class="c-meta">
+            <span class="c-label">Email Address</span>
+            <span class="c-value">[student.email@jecrc.ac.in &bull; To be updated]</span>
+          </div>
+        </div>
+
+        <div class="contact-item-pdf">
+          <div class="c-icon">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+              <rect x="2" y="9" width="4" height="12"></rect>
+              <circle cx="4" cy="4" r="2"></circle>
+            </svg>
+          </div>
+          <div class="c-meta">
+            <span class="c-label">LinkedIn Profile</span>
+            <span class="c-value">[linkedin.com/in/yash-singh-me &bull; To be updated]</span>
+          </div>
+        </div>
+
+        <div class="contact-item-pdf">
+          <div class="c-icon">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+            </svg>
+          </div>
+          <div class="c-meta">
+            <span class="c-label">GitHub / Repository</span>
+            <span class="c-value">[github.com/yash-singh-cad &bull; To be updated]</span>
+          </div>
+        </div>
+
+        <div class="contact-item-pdf">
+          <div class="c-icon">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+              <circle cx="12" cy="10" r="3"></circle>
+            </svg>
+          </div>
+          <div class="c-meta">
+            <span class="c-label">Academic Location</span>
+            <span class="c-value">JECRC University, Jaipur | Home: Balotra, Rajasthan</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Section K: Closing Banner -->
+      <div class="closing-banner-pdf">
+        <div class="closing-motto">“Learning Today. <span>Engineering Tomorrow.</span>”</div>
+        <div class="closing-author">Yash Singh</div>
+        <div class="closing-designation">Aspiring Mechanical Engineer &bull; JECRC University, Jaipur</div>
+      </div>
+    </div>
+
+    <div class="page-footer">
+      <div>YASH SINGH &bull; FIRST-YEAR MECHANICAL ENGINEERING</div>
+      <div class="tagline">"Learning Today. Engineering Tomorrow."</div>
+      <div>PAGE 04 OF 04 &bull; END OF DOSSIER</div>
+    </div>
+  </div>
+
+</body>
+</html>
