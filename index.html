@@ -1,0 +1,1439 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
+  <!-- Primary Meta Tags -->
+  <title>Yash Singh | First-Year Mechanical Engineering Portfolio</title>
+  <meta name="title" content="Yash Singh | First-Year Mechanical Engineering Portfolio" />
+  <meta name="description" content="Official academic and technical portfolio of Yash Singh, First-Year Mechanical Engineering Undergraduate at JECRC University, Jaipur. Originating from Balotra, Rajasthan." />
+  <meta name="keywords" content="Yash Singh, Mechanical Engineering, JECRC University, Balotra, Engineering Portfolio, CAD, Robotics, Manufacturing, Engineering Student" />
+  <meta name="author" content="Yash Singh" />
+
+  <!-- Open Graph / Social Media -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Yash Singh | First-Year Mechanical Engineering Portfolio" />
+  <meta property="og:description" content="Academic portfolio documenting mechanical engineering foundations, CAD interests, and engineering projects at JECRC University, Jaipur." />
+
+  <!-- Google Fonts & Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="blueprint-bg">
+
+  <!-- ==========================================
+       BACKGROUND GRID & CANVAS
+       ========================================== -->
+  <div class="technical-grid-overlay" aria-hidden="true"></div>
+  <canvas id="mechanical-canvas" aria-hidden="true"></canvas>
+
+  <!-- ==========================================
+       NAVIGATION BAR
+       ========================================== -->
+  <header class="site-header" id="header">
+    <div class="nav-container">
+      <a href="#hero" class="brand-logo" aria-label="Yash Singh Home">
+        <span class="logo-box">YS</span>
+        <div class="brand-text">
+          <span class="brand-name">YASH SINGH</span>
+          <span class="brand-sub">ME &bull; JECRC UNIV</span>
+        </div>
+      </a>
+
+      <!-- Desktop Navigation Menu -->
+      <nav class="desktop-nav" aria-label="Main Navigation">
+        <ul class="nav-list">
+          <li><a href="#about" class="nav-link">About</a></li>
+          <li><a href="#education" class="nav-link">Education</a></li>
+          <li><a href="#interests" class="nav-link">Interests</a></li>
+          <li><a href="#skills" class="nav-link">Skills</a></li>
+          <li><a href="#projects" class="nav-link">Projects</a></li>
+          <li><a href="#goals" class="nav-link">Goals</a></li>
+          <li><a href="#contact" class="nav-link">Contact</a></li>
+        </ul>
+      </nav>
+
+      <!-- Nav CTA & Controls -->
+      <div class="nav-actions">
+        <!-- PDF Download Button -->
+        <a href="Yash_Singh_Mechanical_Engineering_Portfolio.pdf" download="Yash_Singh_Mechanical_Engineering_Portfolio.pdf" class="btn btn-sm btn-primary download-pdf-btn" id="nav-download-btn" title="Download Official A4 Portfolio PDF">
+          <svg class="icon-svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+            <polyline points="7 10 12 15 17 10"></polyline>
+            <line x1="12" y1="15" x2="12" y2="3"></line>
+          </svg>
+          <span>Download PDF</span>
+        </a>
+
+        <!-- Mobile Menu Toggle -->
+        <button class="mobile-toggle" id="mobile-toggle" aria-label="Toggle Navigation Menu" aria-expanded="false">
+          <span class="hamburger-bar"></span>
+          <span class="hamburger-bar"></span>
+          <span class="hamburger-bar"></span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Drawer Navigation -->
+    <div class="mobile-drawer" id="mobile-drawer" aria-hidden="true">
+      <ul class="mobile-nav-list">
+        <li><a href="#about" class="mobile-nav-link">01. About Me</a></li>
+        <li><a href="#education" class="mobile-nav-link">02. Education</a></li>
+        <li><a href="#interests" class="mobile-nav-link">03. Engineering Interests</a></li>
+        <li><a href="#skills" class="mobile-nav-link">04. Skills Matrix</a></li>
+        <li><a href="#projects" class="mobile-nav-link">05. Projects</a></li>
+        <li><a href="#certifications" class="mobile-nav-link">06. Certifications</a></li>
+        <li><a href="#goals" class="mobile-nav-link">07. Career Goals</a></li>
+        <li><a href="#contact" class="mobile-nav-link">08. Contact</a></li>
+      </ul>
+      <div class="mobile-drawer-footer">
+        <a href="Yash_Singh_Mechanical_Engineering_Portfolio.pdf" download="Yash_Singh_Mechanical_Engineering_Portfolio.pdf" class="btn btn-primary btn-block">
+          <svg class="icon-svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+            <polyline points="7 10 12 15 17 10"></polyline>
+            <line x1="12" y1="15" x2="12" y2="3"></line>
+          </svg>
+          <span>Download Portfolio PDF</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content">
+
+    <!-- ==========================================
+         SECTION A: HERO / COVER SECTION
+         ========================================== -->
+    <section class="hero-section" id="hero">
+      <div class="container hero-container">
+        
+        <!-- Engineering Spec Header Bar -->
+        <div class="blueprint-tag-bar">
+          <div class="status-indicator">
+            <span class="pulse-dot"></span>
+            <span class="status-label">FIRST-YEAR UNDERGRADUATE &bull; MECHANICAL ENGINEERING</span>
+          </div>
+          <div class="doc-code">SPEC: B.TECH / ME-2026 / ACADEMIC DOSSIER</div>
+        </div>
+
+        <div class="hero-grid">
+          <!-- Left Column: Primary Pitch -->
+          <div class="hero-content">
+            <div class="hero-discipline">
+              <span class="tech-icon">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                  <circle cx="12" cy="12" r="3"></circle>
+                  <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path>
+                </svg>
+              </span>
+              <span>MECHANICAL ENGINEERING STUDENT</span>
+            </div>
+
+            <h1 class="hero-title">
+              YASH <span class="text-silver">SINGH</span>
+            </h1>
+
+            <p class="hero-subtitle">
+              First Year Undergraduate at <span class="highlight-text">JECRC University, Jaipur</span> &bull; Originally from <span class="highlight-text">Balotra, Rajasthan, India</span>.
+            </p>
+
+            <p class="hero-description">
+              Aspiring engineer focused on mastering core engineering fundamentals, physical mechanisms, CAD design, manufacturing processes, and emerging technologies. Preparing for future academic projects, team competitions, and industrial internships.
+            </p>
+
+            <!-- Hero Action Buttons -->
+            <div class="hero-buttons">
+              <a href="Yash_Singh_Mechanical_Engineering_Portfolio.pdf" download="Yash_Singh_Mechanical_Engineering_Portfolio.pdf" class="btn btn-primary" id="hero-pdf-download">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                  <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                  <polyline points="7 10 12 15 17 10"></polyline>
+                  <line x1="12" y1="15" x2="12" y2="3"></line>
+                </svg>
+                <span>Download Portfolio PDF (A4)</span>
+              </a>
+
+              <a href="#about" class="btn btn-secondary">
+                <span>Explore Portfolio</span>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                  <line x1="5" y1="12" x2="19" y2="12"></line>
+                  <polyline points="12 5 19 12 12 19"></polyline>
+                </svg>
+              </a>
+            </div>
+
+            <!-- Metadata Badges -->
+            <div class="hero-badges">
+              <div class="meta-badge">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 10v6M2 10l10-5 10 5-10 5z"></path><path d="M6 12v5c3 3 9 3 12 0v-5"></path></svg>
+                <span>JECRC University, Jaipur</span>
+              </div>
+              <div class="meta-badge">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                <span>Balotra, Rajasthan, India</span>
+              </div>
+              <div class="meta-badge">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 14 14"></polyline></svg>
+                <span>Class of First Year</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right Column: Engineering Blueprint Title Block & Schematic Visual -->
+          <div class="hero-visual">
+            <div class="blueprint-card">
+              <div class="blueprint-card-header">
+                <span class="blueprint-dot red"></span>
+                <span class="blueprint-dot yellow"></span>
+                <span class="blueprint-dot green"></span>
+                <span class="blueprint-filename">ENGINEERING_PROFILE_SPEC_SHEET.DWG</span>
+              </div>
+
+              <!-- Interactive / Dynamic CAD SVG Viewport -->
+              <div class="cad-viewport">
+                <!-- Drafting crosshairs -->
+                <div class="cad-crosshair-h"></div>
+                <div class="cad-crosshair-v"></div>
+                
+                <!-- Third angle projection symbol & compass -->
+                <div class="projection-mark" title="Third Angle Projection">
+                  <svg width="34" height="20" viewBox="0 0 34 20" fill="none" stroke="#38BDF8" stroke-width="1.2">
+                    <circle cx="8" cy="10" r="7" stroke-dasharray="2 1" />
+                    <circle cx="8" cy="10" r="3" />
+                    <polygon points="18,5 30,2 30,18 18,15" />
+                    <line x1="2" y1="10" x2="33" y2="10" stroke-dasharray="4 2" stroke-width="0.8" />
+                  </svg>
+                  <span class="proj-text">3RD ANGLE PROJ</span>
+                </div>
+
+                <!-- Vector Mechanical Blueprint Drawing -->
+                <svg class="cad-drawing" viewBox="0 0 320 220" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <!-- Pitch Circle 1 -->
+                  <circle cx="120" cy="110" r="75" stroke="#38BDF8" stroke-width="1" stroke-dasharray="5 3" opacity="0.6" />
+                  <circle cx="120" cy="110" r="60" stroke="#CBD5E1" stroke-width="1.5" />
+                  <circle cx="120" cy="110" r="22" stroke="#38BDF8" stroke-width="1.5" fill="rgba(56, 189, 248, 0.08)" />
+                  <circle cx="120" cy="110" r="8" stroke="#38BDF8" stroke-width="1.2" />
+
+                  <!-- Centerlines -->
+                  <line x1="30" y1="110" x2="210" y2="110" stroke="#38BDF8" stroke-width="0.75" stroke-dasharray="8 3 2 3" />
+                  <line x1="120" y1="20" x2="120" y2="200" stroke="#38BDF8" stroke-width="0.75" stroke-dasharray="8 3 2 3" />
+
+                  <!-- Gear Teeth Primitives -->
+                  <rect x="114" y="47" width="12" height="12" stroke="#38BDF8" stroke-width="1.2" fill="rgba(56, 189, 248, 0.2)" />
+                  <rect x="114" y="161" width="12" height="12" stroke="#38BDF8" stroke-width="1.2" fill="rgba(56, 189, 248, 0.2)" />
+                  <rect x="57" y="104" width="12" height="12" stroke="#38BDF8" stroke-width="1.2" fill="rgba(56, 189, 248, 0.2)" />
+                  <rect x="171" y="104" width="12" height="12" stroke="#38BDF8" stroke-width="1.2" fill="rgba(56, 189, 248, 0.2)" />
+                  
+                  <!-- Diagonal Teeth -->
+                  <rect x="76" y="66" width="12" height="12" transform="rotate(45 82 72)" stroke="#38BDF8" stroke-width="1.2" fill="rgba(56, 189, 248, 0.15)" />
+                  <rect x="152" y="66" width="12" height="12" transform="rotate(45 158 72)" stroke="#38BDF8" stroke-width="1.2" fill="rgba(56, 189, 248, 0.15)" />
+                  <rect x="76" y="142" width="12" height="12" transform="rotate(45 82 148)" stroke="#38BDF8" stroke-width="1.2" fill="rgba(56, 189, 248, 0.15)" />
+                  <rect x="152" y="142" width="12" height="12" transform="rotate(45 158 148)" stroke="#38BDF8" stroke-width="1.2" fill="rgba(56, 189, 248, 0.15)" />
+
+                  <!-- Pinion / Secondary Mesh Gear -->
+                  <circle cx="230" cy="70" r="38" stroke="#38BDF8" stroke-width="1" stroke-dasharray="3 2" opacity="0.7" />
+                  <circle cx="230" cy="70" r="30" stroke="#CBD5E1" stroke-width="1.5" />
+                  <circle cx="230" cy="70" r="10" stroke="#38BDF8" stroke-width="1.2" fill="rgba(56, 189, 248, 0.1)" />
+                  <line x1="180" y1="70" x2="280" y2="70" stroke="#38BDF8" stroke-width="0.75" stroke-dasharray="6 2 1 2" />
+                  <line x1="230" y1="20" x2="230" y2="120" stroke="#38BDF8" stroke-width="0.75" stroke-dasharray="6 2 1 2" />
+
+                  <!-- Dimension Lines -->
+                  <line x1="120" y1="195" x2="230" y2="195" stroke="#94A3B8" stroke-width="1" />
+                  <polyline points="125,192 120,195 125,198" stroke="#94A3B8" stroke-width="1" fill="none" />
+                  <polyline points="225,192 230,195 225,198" stroke="#94A3B8" stroke-width="1" fill="none" />
+                  <text x="150" y="190" fill="#38BDF8" font-family="'JetBrains Mono', monospace" font-size="9">C = 110.0 mm</text>
+                  
+                  <!-- Angular Callout -->
+                  <path d="M 120 110 L 155 80" stroke="#64748B" stroke-width="0.8" stroke-dasharray="2 2" />
+                  <text x="210" y="145" fill="#94A3B8" font-family="'JetBrains Mono', monospace" font-size="8">MODULE: 2.5</text>
+                  <text x="210" y="158" fill="#94A3B8" font-family="'JetBrains Mono', monospace" font-size="8">RATIO: 1:2.5</text>
+                </svg>
+
+                <div class="cad-overlay-label">
+                  <span>SYSTEM: SPUR TRANSMISSION</span>
+                  <span>CAD VER: 2026.1</span>
+                </div>
+              </div>
+
+              <!-- Technical Title Block (ISO 7200 Standard Style) -->
+              <div class="iso-title-block">
+                <div class="tb-item">
+                  <span class="tb-title">CANDIDATE</span>
+                  <span class="tb-data highlight">YASH SINGH</span>
+                </div>
+                <div class="tb-item">
+                  <span class="tb-title">DISCIPLINE</span>
+                  <span class="tb-data">MECHANICAL ENGG.</span>
+                </div>
+                <div class="tb-item">
+                  <span class="tb-title">ACADEMIC LEVEL</span>
+                  <span class="tb-data highlight">FIRST YEAR</span>
+                </div>
+                <div class="tb-item">
+                  <span class="tb-title">INSTITUTION</span>
+                  <span class="tb-data">JECRC UNIV, JAIPUR</span>
+                </div>
+                <div class="tb-item">
+                  <span class="tb-title">HOMETOWN</span>
+                  <span class="tb-data">BALOTRA, RAJASTHAN</span>
+                </div>
+                <div class="tb-item">
+                  <span class="tb-title">DOCUMENT STATUS</span>
+                  <span class="tb-data">REV 01 &bull; VERIFIED</span>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==========================================
+         SECTION B: ABOUT ME
+         ========================================== -->
+    <section class="section about-section" id="about">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">01 // OVERVIEW</span>
+          <h2 class="section-heading">About Me</h2>
+          <div class="section-rule"></div>
+        </div>
+
+        <div class="about-grid">
+          <div class="about-main-text">
+            <div class="callout-card">
+              <p class="lead-text">
+                I am a first-year <strong>Mechanical Engineering student</strong> at <strong>JECRC University, Jaipur</strong>, originally from <strong>Balotra, Rajasthan, India</strong>.
+              </p>
+              <p>
+                My entry into the world of engineering stems from a genuine curiosity about how physical objects function, how power is transmitted through gears and linkages, and how raw engineering materials are shaped into intricate machines that drive modern civilization.
+              </p>
+              <p>
+                As a beginner in engineering education, I am actively building a solid grounding in engineering mechanics, graphics and design, workshop manufacturing techniques, and mathematical modeling. I am motivated by the challenge of turning technical concepts into tangible solutions and look forward to mastering modern engineering software, hands-on fabrication tools, and automated systems.
+              </p>
+            </div>
+
+            <div class="student-pillars-grid">
+              <div class="pillar-card">
+                <div class="pillar-num">01</div>
+                <h3 class="pillar-title">Inquisitive Mindset</h3>
+                <p class="pillar-desc">Passionate about analyzing the physics, thermodynamics, and kinematics underlying machinery.</p>
+              </div>
+
+              <div class="pillar-card">
+                <div class="pillar-num">02</div>
+                <h3 class="pillar-title">Academic Rigor</h3>
+                <p class="pillar-desc">Committed to mastering core engineering coursework, laboratory practicals, and engineering drafting.</p>
+              </div>
+
+              <div class="pillar-card">
+                <div class="pillar-num">03</div>
+                <h3 class="pillar-title">Practical Orientation</h3>
+                <p class="pillar-desc">Eager to gain hands-on experience in machine shops, CAD modeling software, and university projects.</p>
+              </div>
+
+              <div class="pillar-card">
+                <div class="pillar-num">04</div>
+                <h3 class="pillar-title">Future-Driven</h3>
+                <p class="pillar-desc">Actively following emerging advances in robotics, electric mobility, and sustainable manufacturing.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Quick Fact Sheet / Engineering Identity -->
+          <aside class="about-sidebar">
+            <div class="sidebar-box">
+              <div class="box-title">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+                <span>STUDENT PROFILE RECORD</span>
+              </div>
+              <ul class="dossier-list">
+                <li>
+                  <span class="d-label">Full Name</span>
+                  <span class="d-value">Yash Singh</span>
+                </li>
+                <li>
+                  <span class="d-label">University</span>
+                  <span class="d-value">JECRC University, Jaipur</span>
+                </li>
+                <li>
+                  <span class="d-label">Department</span>
+                  <span class="d-value">Mechanical Engineering</span>
+                </li>
+                <li>
+                  <span class="d-label">Year of Study</span>
+                  <span class="d-value highlight-cyan">First Year (Freshman)</span>
+                </li>
+                <li>
+                  <span class="d-label">Home Town</span>
+                  <span class="d-value">Balotra, Rajasthan, India</span>
+                </li>
+                <li>
+                  <span class="d-label">Primary Objective</span>
+                  <span class="d-value">Core Fundamentals &amp; CAD</span>
+                </li>
+                <li>
+                  <span class="d-label">Academic Ethics</span>
+                  <span class="d-value verified">&bull; 100% Authentic &bull; No Fake Data</span>
+                </li>
+              </ul>
+
+              <div class="sidebar-action">
+                <a href="Yash_Singh_Mechanical_Engineering_Portfolio.pdf" download="Yash_Singh_Mechanical_Engineering_Portfolio.pdf" class="btn btn-outline btn-block">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+                  <span>Download Complete Dossier</span>
+                </a>
+              </div>
+            </div>
+          </aside>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==========================================
+         SECTION C: EDUCATION
+         ========================================== -->
+    <section class="section education-section" id="education">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">02 // ACADEMICS</span>
+          <h2 class="section-heading">Education</h2>
+          <div class="section-rule"></div>
+        </div>
+
+        <div class="edu-timeline">
+          <!-- Timeline Entry 1: Current University -->
+          <div class="timeline-item current">
+            <div class="timeline-marker">
+              <span class="marker-dot"></span>
+              <span class="marker-line"></span>
+            </div>
+            <div class="timeline-content">
+              <div class="timeline-badge-bar">
+                <span class="badge badge-cyan">UNDERGRADUATE STUDIES</span>
+                <span class="timeline-date">2025 &ndash; Present (First Year)</span>
+              </div>
+              <h3 class="edu-degree">Bachelor of Technology (B.Tech) in Mechanical Engineering</h3>
+              <h4 class="edu-school">JECRC University, Jaipur, Rajasthan</h4>
+
+              <div class="edu-specs">
+                <div class="spec-row">
+                  <span class="spec-name">Academic Year:</span>
+                  <span class="spec-desc">First Year (Freshman)</span>
+                </div>
+                <div class="spec-row">
+                  <span class="spec-name">Department:</span>
+                  <span class="spec-desc">Department of Mechanical Engineering</span>
+                </div>
+                <div class="spec-row">
+                  <span class="spec-name">Curriculum Focus:</span>
+                  <span class="spec-desc">Engineering Mechanics, Engineering Graphics &amp; Design, Workshop Technology, Mathematics for Engineers, Applied Physics, and Basic Electrical &amp; Electronics.</span>
+                </div>
+                <div class="spec-row">
+                  <span class="spec-name">Academic Record:</span>
+                  <span class="spec-desc text-muted">[Grades &amp; CGPA will be updated upon completion of formal semester examination cycles.]</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Timeline Entry 2: Pre-University Education -->
+          <div class="timeline-item">
+            <div class="timeline-marker">
+              <span class="marker-dot"></span>
+            </div>
+            <div class="timeline-content">
+              <div class="timeline-badge-bar">
+                <span class="badge badge-silver">PRE-UNIVERSITY FOUNDATION</span>
+                <span class="timeline-date">Balotra, Rajasthan</span>
+              </div>
+              <h3 class="edu-degree">Higher Secondary Education (Science &amp; Mathematics Stream)</h3>
+              <h4 class="edu-school">Balotra, Rajasthan, India</h4>
+
+              <div class="edu-specs">
+                <div class="spec-row">
+                  <span class="spec-name">Home Town:</span>
+                  <span class="spec-desc">Balotra, Rajasthan, India</span>
+                </div>
+                <div class="spec-row">
+                  <span class="spec-name">Core Focus:</span>
+                  <span class="spec-desc">Physics, Chemistry, and Advanced Mathematics (PCM stream). Built strong logical, mathematical, and scientific foundation for undergraduate engineering.</span>
+                </div>
+                <div class="spec-row">
+                  <span class="spec-name">Academic Record:</span>
+                  <span class="spec-desc text-muted">[Scores/Marks to be updated by student upon personal preference.]</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- First-Year Foundational Subjects Grid -->
+        <div class="foundation-modules">
+          <h3 class="subheading">First-Year Foundational Exploration Areas</h3>
+          <p class="subheading-desc">Key core subjects helping establish mechanical engineering principles:</p>
+          
+          <div class="modules-grid">
+            <div class="module-pill">
+              <span class="m-code">ME-F01</span>
+              <span class="m-title">Engineering Mechanics</span>
+              <span class="m-sub">Forces, Equilibrium &amp; Friction</span>
+            </div>
+            <div class="module-pill">
+              <span class="m-code">ME-F02</span>
+              <span class="m-title">Engineering Graphics &amp; Design</span>
+              <span class="m-sub">Orthographic Projections &amp; Drafting</span>
+            </div>
+            <div class="module-pill">
+              <span class="m-code">ME-F03</span>
+              <span class="m-title">Workshop Practice</span>
+              <span class="m-sub">Carpentry, Fitting, Welding &amp; Machining</span>
+            </div>
+            <div class="module-pill">
+              <span class="m-code">ME-F04</span>
+              <span class="m-title">Engineering Mathematics</span>
+              <span class="m-sub">Calculus, Linear Algebra &amp; Vectors</span>
+            </div>
+            <div class="module-pill">
+              <span class="m-code">ME-F05</span>
+              <span class="m-title">Applied Engineering Physics</span>
+              <span class="m-sub">Wave Optics &amp; Material Properties</span>
+            </div>
+            <div class="module-pill">
+              <span class="m-code">ME-F06</span>
+              <span class="m-title">Basic Electrical &amp; Electronics</span>
+              <span class="m-sub">Circuits, Motors &amp; Instrumentation</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==========================================
+         SECTION D: ENGINEERING INTERESTS
+         ========================================== -->
+    <section class="section interests-section" id="interests">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">03 // EXPLORATION</span>
+          <h2 class="section-heading">Engineering Interests</h2>
+          <p class="section-subtext">Core sub-disciplines and emerging mechanical technologies that inspire my academic journey:</p>
+          <div class="section-rule"></div>
+        </div>
+
+        <div class="interests-grid">
+          
+          <!-- Interest 1 -->
+          <div class="interest-card">
+            <div class="interest-header">
+              <div class="interest-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path>
+                  <polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline>
+                  <line x1="12" y1="22.08" x2="12" y2="12"></line>
+                </svg>
+              </div>
+              <span class="interest-index">01</span>
+            </div>
+            <h3 class="interest-title">Mechanical Design &amp; Drawing</h3>
+            <p class="interest-desc">
+              Learning orthographic projections, isometric representations, geometric dimensioning and tolerancing (GD&amp;T), and standard engineering drawings for machine components.
+            </p>
+            <div class="interest-focus">
+              <span>Focus: Drafting Standards &bull; Projections &bull; Fits &bull; Tolerances</span>
+            </div>
+          </div>
+
+          <!-- Interest 2 -->
+          <div class="interest-card">
+            <div class="interest-header">
+              <div class="interest-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                  <line x1="3" y1="9" x2="21" y2="9"></line>
+                  <line x1="9" y1="21" x2="9" y2="9"></line>
+                </svg>
+              </div>
+              <span class="interest-index">02</span>
+            </div>
+            <h3 class="interest-title">CAD 3D Modelling</h3>
+            <p class="interest-desc">
+              Understanding parametric solid modeling, 3D part generation, assembly design, constraint solving, and drafting digital prototypes for structural verification.
+            </p>
+            <div class="interest-focus">
+              <span>Focus: Solid Modeling &bull; Assemblies &bull; Digital Prototyping</span>
+            </div>
+          </div>
+
+          <!-- Interest 3 -->
+          <div class="interest-card">
+            <div class="interest-header">
+              <div class="interest-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M2 20h20M5 20V8l7 4V4l7 4v12"></path>
+                </svg>
+              </div>
+              <span class="interest-index">03</span>
+            </div>
+            <h3 class="interest-title">Manufacturing Processes</h3>
+            <p class="interest-desc">
+              Studying traditional and contemporary fabrication methods—casting, metal forming, machining (lathe, milling), sheet metal work, joining techniques, and additive manufacturing.
+            </p>
+            <div class="interest-focus">
+              <span>Focus: Machining &bull; Casting &bull; Fabrication &bull; 3D Printing</span>
+            </div>
+          </div>
+
+          <!-- Interest 4 -->
+          <div class="interest-card">
+            <div class="interest-header">
+              <div class="interest-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+                </svg>
+              </div>
+              <span class="interest-index">04</span>
+            </div>
+            <h3 class="interest-title">Thermodynamics &amp; Heat Transfer</h3>
+            <p class="interest-desc">
+              Exploring energy conservation, thermodynamic cycles (Rankine, Brayton, Otto, Diesel), conduction, convection, radiation, and thermal management in machines.
+            </p>
+            <div class="interest-focus">
+              <span>Focus: Heat Cycles &bull; Energy Systems &bull; Fluid Mechanics</span>
+            </div>
+          </div>
+
+          <!-- Interest 5 -->
+          <div class="interest-card">
+            <div class="interest-header">
+              <div class="interest-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <rect x="4" y="4" width="16" height="16" rx="2"></rect>
+                  <circle cx="9" cy="9" r="2"></circle>
+                  <circle cx="15" cy="9" r="2"></circle>
+                  <line x1="8" y1="15" x2="16" y2="15"></line>
+                </svg>
+              </div>
+              <span class="interest-index">05</span>
+            </div>
+            <h3 class="interest-title">Robotics &amp; Automation</h3>
+            <p class="interest-desc">
+              Fascinated by the intersection of mechanics, electronic actuators, microcontrollers, kinematic linkages, sensor feedback, and automated industrial assembly lines.
+            </p>
+            <div class="interest-focus">
+              <span>Focus: Kinematics &bull; Mechatronics &bull; Actuators &bull; Control</span>
+            </div>
+          </div>
+
+          <!-- Interest 6 -->
+          <div class="interest-card">
+            <div class="interest-header">
+              <div class="interest-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+                </svg>
+              </div>
+              <span class="interest-index">06</span>
+            </div>
+            <h3 class="interest-title">Electric Vehicles &amp; Clean Tech</h3>
+            <p class="interest-desc">
+              Interested in next-generation electric mobility, EV drivetrain mechanics, regenerative braking systems, battery thermal containment, and sustainable engineering design.
+            </p>
+            <div class="interest-focus">
+              <span>Focus: EV Powertrains &bull; Battery Thermal Mgmt &bull; Efficiency</span>
+            </div>
+          </div>
+
+          <!-- Interest 7 -->
+          <div class="interest-card">
+            <div class="interest-header">
+              <div class="interest-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <circle cx="12" cy="12" r="3"></circle>
+                  <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path>
+                </svg>
+              </div>
+              <span class="interest-index">07</span>
+            </div>
+            <h3 class="interest-title">Machines &amp; Mechanical Systems</h3>
+            <p class="interest-desc">
+              Understanding gear trains, cams, governors, belt drives, clutches, and bearings. Analyzing how mechanical components collaborate to transmit force with precision.
+            </p>
+            <div class="interest-focus">
+              <span>Focus: Power Transmission &bull; Linkages &bull; Machine Elements</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         SECTION E: SKILLS MATRIX
+         ========================================== -->
+    <section class="section skills-section" id="skills">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">04 // CAPABILITIES</span>
+          <h2 class="section-heading">Skills Matrix</h2>
+          <p class="section-subtext">Transparent breakdown of engineering capabilities currently in development through first-year university coursework:</p>
+          <div class="section-rule"></div>
+        </div>
+
+        <!-- Academic Integrity Notice -->
+        <div class="integrity-banner">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="10"></circle>
+            <line x1="12" y1="8" x2="12" y2="12"></line>
+            <line x1="12" y1="16" x2="12.01" y2="16"></line>
+          </svg>
+          <p>
+            <strong>Undergraduate Integrity Statement:</strong> As a first-year student, I do not make false claims of software mastery or advanced engineering certification. Below is an honest status tracker of skills being acquired and placeholders ready to be updated as proficiency is verified.
+          </p>
+        </div>
+
+        <div class="skills-grid">
+          
+          <!-- Category 1: Design & Drafting -->
+          <div class="skill-category-card">
+            <div class="category-header">
+              <h3 class="category-title">CAD &amp; Engineering Graphics</h3>
+              <span class="status-chip chip-yellow">In Progress</span>
+            </div>
+            <div class="skill-rows">
+              <div class="skill-row">
+                <div class="skill-meta">
+                  <span class="s-name">CAD Software (SolidWorks / AutoCAD / Fusion 360)</span>
+                  <span class="s-status">To be updated</span>
+                </div>
+                <div class="skill-status-desc">Planned coursework &amp; self-directed computer lab training.</div>
+              </div>
+
+              <div class="skill-row">
+                <div class="skill-meta">
+                  <span class="s-name">Engineering Drawing &amp; Drafting</span>
+                  <span class="s-status">In Progress (Curriculum)</span>
+                </div>
+                <div class="skill-status-desc">Active First-Year subject covering orthographic projections, isometric views, and drafting standards.</div>
+              </div>
+
+              <div class="skill-row">
+                <div class="skill-meta">
+                  <span class="s-name">Geometric Dimensioning &amp; Tolerancing (GD&amp;T)</span>
+                  <span class="s-status">To be updated</span>
+                </div>
+                <div class="skill-status-desc">Introductory understanding of engineering fits, limits, and technical symbols.</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Category 2: Computing & Analysis -->
+          <div class="skill-category-card">
+            <div class="category-header">
+              <h3 class="category-title">Programming &amp; Computational Tools</h3>
+              <span class="status-chip chip-cyan">Planned / In Progress</span>
+            </div>
+            <div class="skill-rows">
+              <div class="skill-row">
+                <div class="skill-meta">
+                  <span class="s-name">Programming (Python / C / MATLAB)</span>
+                  <span class="s-status">To be updated</span>
+                </div>
+                <div class="skill-status-desc">Undergraduate introduction to algorithmic problem solving and numerical calculation.</div>
+              </div>
+
+              <div class="skill-row">
+                <div class="skill-meta">
+                  <span class="s-name">Finite Element Analysis (FEA) Tools</span>
+                  <span class="s-status">To be updated</span>
+                </div>
+                <div class="skill-status-desc">Future semester target for structural stress and thermal simulation studies.</div>
+              </div>
+
+              <div class="skill-row">
+                <div class="skill-meta">
+                  <span class="s-name">Engineering Spreadsheet Modeling (Excel)</span>
+                  <span class="s-status">To be updated</span>
+                </div>
+                <div class="skill-status-desc">Tabulation of laboratory observations, error analysis, and formula calculations.</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Category 3: Practical & Workshop -->
+          <div class="skill-category-card">
+            <div class="category-header">
+              <h3 class="category-title">Workshop &amp; Manufacturing Methods</h3>
+              <span class="status-chip chip-yellow">Active Laboratory</span>
+            </div>
+            <div class="skill-rows">
+              <div class="skill-row">
+                <div class="skill-meta">
+                  <span class="s-name">Workshop Practice &amp; Hand Tools</span>
+                  <span class="s-status">In Progress (Lab)</span>
+                </div>
+                <div class="skill-status-desc">Hands-on experience in university workshop: fitting shop, carpentry, tin-smithy, and welding basics.</div>
+              </div>
+
+              <div class="skill-row">
+                <div class="skill-meta">
+                  <span class="s-name">Machine Tools Operations (Lathe, Drill)</span>
+                  <span class="s-status">To be updated</span>
+                </div>
+                <div class="skill-status-desc">Supervised observation and beginner operations on conventional machine tools.</div>
+              </div>
+
+              <div class="skill-row">
+                <div class="skill-meta">
+                  <span class="s-name">Laboratory Measurement Instruments</span>
+                  <span class="s-status">In Progress</span>
+                </div>
+                <div class="skill-status-desc">Utilizing Vernier calipers, micrometers, dial gauges, and spirit levels.</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Category 4: Professional & Teamwork -->
+          <div class="skill-category-card">
+            <div class="category-header">
+              <h3 class="category-title">Professional &amp; Soft Skills</h3>
+              <span class="status-chip chip-green">Core Discipline</span>
+            </div>
+            <div class="skill-rows">
+              <div class="skill-row">
+                <div class="skill-meta">
+                  <span class="s-name">Communication &amp; Teamwork</span>
+                  <span class="s-status">To be updated</span>
+                </div>
+                <div class="skill-status-desc">Active collaboration on university group lab experiments, presentations, and peer discussions.</div>
+              </div>
+
+              <div class="skill-row">
+                <div class="skill-meta">
+                  <span class="s-name">Technical Report Writing</span>
+                  <span class="s-status">To be updated</span>
+                </div>
+                <div class="skill-status-desc">Documenting lab procedures, observational data, calculations, and error discussions.</div>
+              </div>
+
+              <div class="skill-row">
+                <div class="skill-meta">
+                  <span class="s-name">Analytical Problem Solving</span>
+                  <span class="s-status">Active Exploration</span>
+                </div>
+                <div class="skill-status-desc">Mathematical decomposition of force equilibrium, moments, and kinematic relations.</div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==========================================
+         SECTION F: PROJECTS SHOWCASE
+         ========================================== -->
+    <section class="section projects-section" id="projects">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">05 // WORK SHOWCASE</span>
+          <h2 class="section-heading">Engineering Projects</h2>
+          <p class="section-subtext">Structured project showcase designed for first-year academic projects, laboratory builds, and design competitions:</p>
+          <div class="section-rule"></div>
+        </div>
+
+        <div class="projects-meta-tip">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path>
+            <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path>
+          </svg>
+          <span><strong>Project Workspace Note:</strong> These project cards are structured templates ready for Yash Singh to fill in with real project data, photos, and CAD drawings as academic assignments and team competitions progress.</span>
+        </div>
+
+        <div class="projects-grid">
+          
+          <!-- Project Card 1 -->
+          <article class="project-card" id="project-card-1">
+            <div class="project-card-header">
+              <div class="card-ref-badge">PROJECT SPEC 01</div>
+              <span class="project-status-tag">To Be Added</span>
+            </div>
+
+            <!-- Image / Schematic Placeholder -->
+            <div class="project-img-placeholder">
+              <div class="blueprint-lines"></div>
+              <div class="placeholder-content">
+                <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                  <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                  <circle cx="8.5" cy="8.5" r="1.5"></circle>
+                  <polyline points="21 15 16 10 5 21"></polyline>
+                </svg>
+                <span class="placeholder-title">CAD SCHEMATIC / PROTOTYPE PHOTO</span>
+                <span class="placeholder-caption">Insert image: <code>project1-cad.png</code></span>
+              </div>
+            </div>
+
+            <div class="project-card-body">
+              <h3 class="project-title">[Project Title: e.g., 4-Bar Mechanism Kinematic Simulator]</h3>
+
+              <div class="project-field">
+                <h4 class="field-label">Problem Statement</h4>
+                <p class="field-value">
+                  [To be updated: Describe the practical mechanical engineering problem, operational requirement, or design challenge that this project was created to address.]
+                </p>
+              </div>
+
+              <div class="project-field">
+                <h4 class="field-label">Design &amp; Engineering Approach</h4>
+                <p class="field-value">
+                  [To be updated: Detail your step-by-step approach, free-body diagrams, mathematical calculations, CAD modeling strategy, or manufacturing steps.]
+                </p>
+              </div>
+
+              <div class="project-field">
+                <h4 class="field-label">Tools &amp; Software Used</h4>
+                <div class="project-tags">
+                  <span class="p-tag">[CAD Tool: To be updated]</span>
+                  <span class="p-tag">[Fabrication: To be updated]</span>
+                  <span class="p-tag">[Analysis: To be updated]</span>
+                </div>
+              </div>
+
+              <div class="project-field">
+                <h4 class="field-label">Results &amp; Key Learnings</h4>
+                <p class="field-value">
+                  [To be updated: Summary of quantitative results, mechanical efficiency, tolerance verification, and key engineering lessons gained during execution.]
+                </p>
+              </div>
+            </div>
+
+            <div class="project-card-footer">
+              <span class="project-footer-note">&bull; Card 01 of 03 &bull; Editable Academic Card</span>
+              <button class="btn btn-xs btn-outline copy-template-btn" data-target="project-1">Copy Card Structure</button>
+            </div>
+          </article>
+
+          <!-- Project Card 2 -->
+          <article class="project-card" id="project-card-2">
+            <div class="project-card-header">
+              <div class="card-ref-badge">PROJECT SPEC 02</div>
+              <span class="project-status-tag">To Be Added</span>
+            </div>
+
+            <!-- Image / Schematic Placeholder -->
+            <div class="project-img-placeholder">
+              <div class="blueprint-lines"></div>
+              <div class="placeholder-content">
+                <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <line x1="12" y1="8" x2="12" y2="12"></line>
+                  <line x1="12" y1="16" x2="12.01" y2="16"></line>
+                </svg>
+                <span class="placeholder-title">LABORATORY EXPERIMENT / WORKSHOP BUILD</span>
+                <span class="placeholder-caption">Insert image: <code>project2-build.png</code></span>
+              </div>
+            </div>
+
+            <div class="project-card-body">
+              <h3 class="project-title">[Project Title: e.g., Spur Gear Train Analysis &amp; Speed Reducer]</h3>
+
+              <div class="project-field">
+                <h4 class="field-label">Problem Statement</h4>
+                <p class="field-value">
+                  [To be updated: Describe the target transmission ratio, torque magnification requirement, or gear design constraints investigated in this study.]
+                </p>
+              </div>
+
+              <div class="project-field">
+                <h4 class="field-label">Design &amp; Engineering Approach</h4>
+                <p class="field-value">
+                  [To be updated: Analytical calculations of module, pitch diameters, tooth profiles, center distances, and shaft mounting configurations.]
+                </p>
+              </div>
+
+              <div class="project-field">
+                <h4 class="field-label">Tools &amp; Software Used</h4>
+                <div class="project-tags">
+                  <span class="p-tag">[Drafting: To be updated]</span>
+                  <span class="p-tag">[Workshop: To be updated]</span>
+                  <span class="p-tag">[Calculations: To be updated]</span>
+                </div>
+              </div>
+
+              <div class="project-field">
+                <h4 class="field-label">Results &amp; Key Learnings</h4>
+                <p class="field-value">
+                  [To be updated: Velocity ratio confirmation, backlash assessment, operational smoothness, and fabrication takeaways.]
+                </p>
+              </div>
+            </div>
+
+            <div class="project-card-footer">
+              <span class="project-footer-note">&bull; Card 02 of 03 &bull; Editable Academic Card</span>
+              <button class="btn btn-xs btn-outline copy-template-btn" data-target="project-2">Copy Card Structure</button>
+            </div>
+          </article>
+
+          <!-- Project Card 3 -->
+          <article class="project-card" id="project-card-3">
+            <div class="project-card-header">
+              <div class="card-ref-badge">PROJECT SPEC 03</div>
+              <span class="project-status-tag">To Be Added</span>
+            </div>
+
+            <!-- Image / Schematic Placeholder -->
+            <div class="project-img-placeholder">
+              <div class="blueprint-lines"></div>
+              <div class="placeholder-content">
+                <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                  <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
+                  <polyline points="2 17 12 22 22 17"></polyline>
+                  <polyline points="2 12 12 17 22 12"></polyline>
+                </svg>
+                <span class="placeholder-title">INNOVATION / AUTOMATION CONCEPT</span>
+                <span class="placeholder-caption">Insert image: <code>project3-render.png</code></span>
+              </div>
+            </div>
+
+            <div class="project-card-body">
+              <h3 class="project-title">[Project Title: e.g., Automated Pick-and-Place Linkage Mechanism]</h3>
+
+              <div class="project-field">
+                <h4 class="field-label">Problem Statement</h4>
+                <p class="field-value">
+                  [To be updated: Formulation of automated handling problem, payload limits, cycle speed, or degrees of freedom required.]
+                </p>
+              </div>
+
+              <div class="project-field">
+                <h4 class="field-label">Design &amp; Engineering Approach</h4>
+                <p class="field-value">
+                  [To be updated: Synthesis of planar linkage, actuator selection, micro-controller interface, or 3D printed end-effector modeling.]
+                </p>
+              </div>
+
+              <div class="project-field">
+                <h4 class="field-label">Tools &amp; Software Used</h4>
+                <div class="project-tags">
+                  <span class="p-tag">[Software: To be updated]</span>
+                  <span class="p-tag">[Hardware: To be updated]</span>
+                  <span class="p-tag">[Simulation: To be updated]</span>
+                </div>
+              </div>
+
+              <div class="project-field">
+                <h4 class="field-label">Results &amp; Key Learnings</h4>
+                <p class="field-value">
+                  [To be updated: Kinematic repeatability, positional accuracy findings, and insights on mechatronics integration.]
+                </p>
+              </div>
+            </div>
+
+            <div class="project-card-footer">
+              <span class="project-footer-note">&bull; Card 03 of 03 &bull; Editable Academic Card</span>
+              <button class="btn btn-xs btn-outline copy-template-btn" data-target="project-3">Copy Card Structure</button>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         SECTION G: CERTIFICATIONS & ACHIEVEMENTS
+         ========================================== -->
+    <section class="section certifications-section" id="certifications">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">06 // CREDENTIALS</span>
+          <h2 class="section-heading">Certifications &amp; Achievements</h2>
+          <p class="section-subtext">Dedicated slots for official course certifications, university workshops, technical symposiums, and student competitions:</p>
+          <div class="section-rule"></div>
+        </div>
+
+        <div class="cert-grid">
+          
+          <div class="cert-card">
+            <div class="cert-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="8" r="7"></circle>
+                <polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline>
+              </svg>
+            </div>
+            <div class="cert-details">
+              <span class="cert-type">CERTIFICATION PLACEHOLDER 01</span>
+              <h3 class="cert-title">[Online Certification: NPTEL / Coursera / edX]</h3>
+              <p class="cert-org">Issuing Body: [e.g., IIT / NPTEL / Autodesk &bull; To be updated]</p>
+              <p class="cert-desc">Placeholder ready for credential in Engineering Mechanics, CAD Design, or Python for Engineers.</p>
+            </div>
+          </div>
+
+          <div class="cert-card">
+            <div class="cert-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                <polyline points="14 2 14 8 20 8"></polyline>
+              </svg>
+            </div>
+            <div class="cert-details">
+              <span class="cert-type">WORKSHOP PLACEHOLDER 02</span>
+              <h3 class="cert-title">[Technical Workshop / Hands-on Bootcamp]</h3>
+              <p class="cert-org">Institution: [JECRC University / Tech Fest &bull; To be updated]</p>
+              <p class="cert-desc">Placeholder for practical workshop participation in Robotics, 3D Printing, or Vehicle Dynamics.</p>
+            </div>
+          </div>
+
+          <div class="cert-card">
+            <div class="cert-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+              </svg>
+            </div>
+            <div class="cert-details">
+              <span class="cert-type">COMPETITION PLACEHOLDER 03</span>
+              <h3 class="cert-title">[Engineering Design / Hackathon / Quiz]</h3>
+              <p class="cert-org">Organizer: [Collegiate Event &bull; To be updated]</p>
+              <p class="cert-desc">Placeholder for upcoming university contests, bridge design challenges, or SAE collegiate events.</p>
+            </div>
+          </div>
+
+          <div class="cert-card">
+            <div class="cert-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                <circle cx="8.5" cy="7" r="4"></circle>
+                <polyline points="17 11 19 13 23 9"></polyline>
+              </svg>
+            </div>
+            <div class="cert-details">
+              <span class="cert-type">MEMBERSHIP / CLUB PLACEHOLDER 04</span>
+              <h3 class="cert-title">[Engineering Society / Club Membership]</h3>
+              <p class="cert-org">Society: [e.g., SAE India / ASME Student Section &bull; To be updated]</p>
+              <p class="cert-desc">Placeholder for collegiate technical club participation and engineering society involvement.</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         SECTION H: CAREER GOALS
+         ========================================== -->
+    <section class="section goals-section" id="goals">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">07 // VISION</span>
+          <h2 class="section-heading">Career Goals &amp; Aspirations</h2>
+          <p class="section-subtext">A realistic and inspiring roadmap for my journey through mechanical engineering:</p>
+          <div class="section-rule"></div>
+        </div>
+
+        <div class="goals-content-box">
+          <div class="goals-quote-icon">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <path d="M3 21c3 0 7-1 7-8V5c0-1.25-.75-2-2-2H4c-1.25 0-2 .75-2 2v6c0 7 1 8 3 8z"></path>
+              <path d="M17 21c3 0 7-1 7-8V5c0-1.25-.75-2-2-2h-4c-1.25 0-2 .75-2 2v6c0 7 1 8 3 8z"></path>
+            </svg>
+          </div>
+          <p class="goals-paragraph">
+            My primary goal as a mechanical engineering undergraduate is to build an uncompromising command over foundational engineering sciences—mastering solid mechanics, dynamics, thermodynamics, fluid flow, and materials science. During my four years at JECRC University, I aim to translate analytical formulas into practical solutions by mastering industry-grade CAD software and finite element analysis (FEA) tools, actively engaging in machine shop fabrication, and contributing to collaborative student engineering projects such as formula student, robotics, and clean energy initiatives.
+          </p>
+          <p class="goals-paragraph">
+            In the later stages of my degree, I look forward to securing challenging industrial internships where I can learn under experienced professional mentors and understand real-world manufacturing constraints. My ultimate ambition is to evolve into a versatile, innovative mechanical engineer who develops durable, energy-efficient, and sustainable systems that contribute constructively to technological advancement and societal progress.
+          </p>
+        </div>
+
+        <!-- 4-Stage Undergraduate Milestone Roadmap -->
+        <div class="roadmap-grid">
+          <div class="roadmap-step">
+            <div class="step-num">STAGE 01</div>
+            <h3 class="step-title">Fundamentals &amp; Drawing</h3>
+            <p class="step-desc">Engineering mechanics, graphics, physics, workshop practice, and logical fundamentals.</p>
+            <span class="step-status active">Current Phase</span>
+          </div>
+
+          <div class="roadmap-step">
+            <div class="step-num">STAGE 02</div>
+            <h3 class="step-title">Core Systems &amp; CAD</h3>
+            <p class="step-desc">Kinematics of machines, strength of materials, thermodynamics, and 3D parametric CAD modeling.</p>
+            <span class="step-status">Target: Year 2</span>
+          </div>
+
+          <div class="roadmap-step">
+            <div class="step-num">STAGE 03</div>
+            <h3 class="step-title">Simulation &amp; Projects</h3>
+            <p class="step-desc">Fluid mechanics, heat transfer, machine design, FEA stress simulation, and collegiate competitions.</p>
+            <span class="step-status">Target: Year 3</span>
+          </div>
+
+          <div class="roadmap-step">
+            <div class="step-num">STAGE 04</div>
+            <h3 class="step-title">Capstone &amp; Industry</h3>
+            <p class="step-desc">Comprehensive major project, industrial internship, technical publication, and career transition.</p>
+            <span class="step-status">Target: Year 4</span>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==========================================
+         SECTION I: PERSONAL INTERESTS
+         ========================================== -->
+    <section class="section hobbies-section" id="interests-personal">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">08 // BEYOND ACADEMICS</span>
+          <h2 class="section-heading">Personal Interests &amp; Hobbies</h2>
+          <p class="section-subtext">Editable slots for extracurricular pursuits, creative endeavors, and personal hobbies:</p>
+          <div class="section-rule"></div>
+        </div>
+
+        <div class="hobbies-grid">
+          <div class="hobby-card">
+            <div class="hobby-badge">HOBBY 01</div>
+            <h3 class="hobby-title">[Technical Curiosity &amp; Tinkering]</h3>
+            <p class="hobby-desc">
+              [Editable placeholder: e.g., Exploring how mechanisms work, scale modeling, dismantling old clocks or electronic gadgets to understand internal assemblies.]
+            </p>
+          </div>
+
+          <div class="hobby-card">
+            <div class="hobby-badge">HOBBY 02</div>
+            <h3 class="hobby-title">[Reading &amp; Scientific Exploration]</h3>
+            <p class="hobby-desc">
+              [Editable placeholder: e.g., Reading about aerospace innovations, automotive design history, physics breakthroughs, or industrial biographies.]
+            </p>
+          </div>
+
+          <div class="hobby-card">
+            <div class="hobby-badge">HOBBY 03</div>
+            <h3 class="hobby-title">[Sports &amp; Physical Fitness]</h3>
+            <p class="hobby-desc">
+              [Editable placeholder: e.g., Badminton, cricket, athletics, swimming, or team sports that foster strategic focus and discipline.]
+            </p>
+          </div>
+
+          <div class="hobby-card">
+            <div class="hobby-badge">HOBBY 04</div>
+            <h3 class="hobby-title">[Creative &amp; Digital Pursuits]</h3>
+            <p class="hobby-desc">
+              [Editable placeholder: e.g., Photography, technical sketching, PC building, 3D printing exploration, or learning new digital tools.]
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==========================================
+         SECTION J: CONTACT
+         ========================================== -->
+    <section class="section contact-section" id="contact">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">09 // COMMUNICATION</span>
+          <h2 class="section-heading">Contact Information</h2>
+          <p class="section-subtext">Open to academic inquiries, collaborative student engineering projects, and future internship opportunities:</p>
+          <div class="section-rule"></div>
+        </div>
+
+        <div class="contact-grid">
+          
+          <!-- Contact Info Cards -->
+          <div class="contact-cards-col">
+            
+            <!-- Email -->
+            <div class="contact-card">
+              <div class="contact-icon">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                  <polyline points="22,6 12,13 2,6"></polyline>
+                </svg>
+              </div>
+              <div class="contact-info">
+                <span class="c-label">UNIVERSITY / PERSONAL EMAIL</span>
+                <span class="c-val copyable-text" data-copy="student.email@jecrc.ac.in">[email-address@jecrc.ac.in &bull; To be updated]</span>
+                <span class="c-hint">Click text to copy placeholder</span>
+              </div>
+            </div>
+
+            <!-- LinkedIn -->
+            <div class="contact-card">
+              <div class="contact-icon">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                  <rect x="2" y="9" width="4" height="12"></rect>
+                  <circle cx="4" cy="4" r="2"></circle>
+                </svg>
+              </div>
+              <div class="contact-info">
+                <span class="c-label">LINKEDIN PROFILE</span>
+                <span class="c-val copyable-text" data-copy="https://linkedin.com/in/yash-singh-me">[linkedin.com/in/yash-singh-me &bull; To be updated]</span>
+                <span class="c-hint">Professional networking link</span>
+              </div>
+            </div>
+
+            <!-- GitHub / CAD Repo -->
+            <div class="contact-card">
+              <div class="contact-icon">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+                </svg>
+              </div>
+              <div class="contact-info">
+                <span class="c-label">GITHUB / CAD REPOSITORY</span>
+                <span class="c-val copyable-text" data-copy="https://github.com/yash-singh-cad">[github.com/yash-singh-cad &bull; To be updated]</span>
+                <span class="c-hint">Code &amp; simulation models</span>
+              </div>
+            </div>
+
+            <!-- Academic Address -->
+            <div class="contact-card">
+              <div class="contact-icon">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                  <circle cx="12" cy="10" r="3"></circle>
+                </svg>
+              </div>
+              <div class="contact-info">
+                <span class="c-label">CAMPUS &amp; HOMETOWN</span>
+                <span class="c-val">JECRC University, Ramchandrapura, Sitapura Industrial Area Extn, Jaipur, Rajasthan 303905</span>
+                <span class="c-hint">Home: Balotra, Rajasthan, India</span>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Interactive Message Form -->
+          <div class="contact-form-col">
+            <div class="form-wrapper">
+              <div class="form-header">
+                <h3 class="form-title">Send a Direct Message</h3>
+                <p class="form-subtitle">Have an academic query or project invitation? Send a message directly.</p>
+              </div>
+
+              <form id="portfolio-contact-form" class="engineering-form">
+                <div class="form-group">
+                  <label for="contact-name" class="form-label">Full Name *</label>
+                  <input type="text" id="contact-name" name="name" class="form-input" placeholder="Your name" required />
+                </div>
+
+                <div class="form-group">
+                  <label for="contact-email" class="form-label">Email Address *</label>
+                  <input type="email" id="contact-email" name="email" class="form-input" placeholder="your.email@example.com" required />
+                </div>
+
+                <div class="form-group">
+                  <label for="contact-subject" class="form-label">Subject</label>
+                  <input type="text" id="contact-subject" name="subject" class="form-input" placeholder="Academic Collaboration / Inquiry" />
+                </div>
+
+                <div class="form-group">
+                  <label for="contact-message" class="form-label">Message *</label>
+                  <textarea id="contact-message" name="message" rows="4" class="form-input" placeholder="Write your message here..." required></textarea>
+                </div>
+
+                <button type="submit" class="btn btn-primary btn-block">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="22" y1="2" x2="11" y2="13"></line>
+                    <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+                  </svg>
+                  <span>Transmit Message</span>
+                </button>
+                <div id="form-feedback" class="form-feedback" aria-live="polite"></div>
+              </form>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         SECTION K: CLOSING PAGE / BANNER
+         ========================================== -->
+    <section class="section closing-section" id="closing">
+      <div class="container">
+        <div class="closing-box">
+          <div class="closing-gear-mark" aria-hidden="true">
+            <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1">
+              <circle cx="12" cy="12" r="3"></circle>
+              <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path>
+            </svg>
+          </div>
+
+          <h2 class="closing-motto">
+            “Learning Today. <span class="highlight-cyan">Engineering Tomorrow.</span>”
+          </h2>
+          <div class="closing-name">Yash Singh</div>
+          <div class="closing-title">Aspiring Mechanical Engineer</div>
+          <div class="closing-meta">JECRC University, Jaipur &bull; Balotra, Rajasthan, India</div>
+
+          <div class="closing-actions">
+            <a href="Yash_Singh_Mechanical_Engineering_Portfolio.pdf" download="Yash_Singh_Mechanical_Engineering_Portfolio.pdf" class="btn btn-primary">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                <polyline points="7 10 12 15 17 10"></polyline>
+                <line x1="12" y1="15" x2="12" y2="3"></line>
+              </svg>
+              <span>Download Portfolio Document (PDF)</span>
+            </a>
+            <a href="#hero" class="btn btn-secondary">Back to Top &uarr;</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ==========================================
+       FOOTER
+       ========================================== -->
+  <footer class="site-footer">
+    <div class="container footer-container">
+      <div class="footer-left">
+        <div class="footer-brand">
+          <span class="logo-box">YS</span>
+          <span class="f-text">YASH SINGH &bull; MECHANICAL ENGINEERING PORTFOLIO</span>
+        </div>
+        <p class="footer-copy">
+          Designed with precision &bull; Engineering-first aesthetic &bull; Built with standard HTML5, CSS3, &amp; Vanilla JavaScript.
+        </p>
+      </div>
+
+      <div class="footer-right">
+        <div class="footer-metadata">
+          <span class="meta-item">DOC REF: YS-ME-2026-REV01</span>
+          <span class="meta-item">STATUS: UNDERGRADUATE ACTIVE</span>
+          <span class="meta-item">LOCATION: JAIPUR / BALOTRA</span>
+        </div>
+        <div class="footer-links">
+          <a href="#about">About</a> &bull;
+          <a href="#education">Education</a> &bull;
+          <a href="#skills">Skills</a> &bull;
+          <a href="#projects">Projects</a> &bull;
+          <a href="Yash_Singh_Mechanical_Engineering_Portfolio.pdf" download>PDF Dossier</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Toast Notification Container -->
+  <div id="toast" class="toast-box" role="alert" aria-live="polite"></div>
+
+  <!-- JavaScript -->
+  <script src="script.js"></script>
+</body>
+</html>
